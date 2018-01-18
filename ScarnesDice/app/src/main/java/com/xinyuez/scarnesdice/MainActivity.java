@@ -3,6 +3,7 @@ package com.xinyuez.scarnesdice;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -186,9 +187,9 @@ public class MainActivity extends AppCompatActivity
 
     protected void computerTurn()
     {
+        turnScoreTxt.setText("Your Turn Score: " + 0);
         for(int i = 0; i < COMPUTER_TURNS; i++)
         {
-            turnScoreTxt.setText("Your Turn Score: " + 0);
             final int faceIdx = new Random().nextInt(DICE_FACES);
             final boolean compRolledOne = faceIdx == 0;
             new Handler().postDelayed(new Runnable()
@@ -203,6 +204,7 @@ public class MainActivity extends AppCompatActivity
                             @Override
                             public void run()
                             {
+                                Log.d("compRolledOne", "1");
                                 final int score = display(faceIdx);
                                 setCompScore(score);
                                 statusTxt.setText("Computer rolled a one");
@@ -216,6 +218,7 @@ public class MainActivity extends AppCompatActivity
                             @Override
                             public void run()
                             {
+                                Log.d("compRolledFace", "2");
                                 final int score = display(faceIdx);
                                 setCompScore(score);
                             }
@@ -225,6 +228,7 @@ public class MainActivity extends AppCompatActivity
             }, (i + 1) * 1000);
             if(compRolledOne)
             {
+                Log.d("compHoldsWithOne", "3");
                 return;
             }
         }
@@ -233,6 +237,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void run()
             {
+                Log.d("CompHolds", "4");
                 statusTxt.setText("Computer holds");
                 hold(Turn.COMPUTER);
             }
