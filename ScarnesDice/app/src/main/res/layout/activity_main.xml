@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinyuez.scarnesdice.MainActivity">
+
+    <TextView
+        android:id="@+id/turn"
+        android:layout_width="136dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Your Turn Score: 0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="153dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Status:"
+        app:layout_constraintStart_toEndOf="@+id/turn"
+        app:layout_constraintTop_toBottomOf="@+id/comp" />
+
+    <TextView
+        android:id="@+id/comp"
+        android:layout_width="153dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="32dp"
+        android:text="Computer Score: 0"
+        app:layout_constraintStart_toEndOf="@+id/user"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="136dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Your Score: 0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="128dp"
+        android:text="Reset"
+        app:layout_constraintStart_toEndOf="@+id/hold"
+        app:layout_constraintTop_toBottomOf="@+id/dice" />
+
+    <Button
+        android:id="@+id/hold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="128dp"
+        android:text="Hold"
+        app:layout_constraintStart_toEndOf="@+id/roll"
+        app:layout_constraintTop_toBottomOf="@+id/dice" />
+
+    <Button
+        android:id="@+id/roll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="128dp"
+        android:text="Roll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dice" />
+
+    <ImageView
+        android:id="@+id/dice"
+        android:layout_width="284dp"
+        android:layout_height="281dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comp"
+        app:srcCompat="@drawable/dice1" />
+
+</android.support.constraint.ConstraintLayout>
